@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Covid19 Stats Tracker: stat-covid19.netlify.app</title>
+    <meta name="title" content="Coronavirus Outbreak in India: Latest Map and Case Count" />
+    <meta name="description" content="A volunteer effort to track the coronavirus/Covid19 stats updates of World and india with Great User Interface. A detailed table of World, Countries, states and Distrcts Details and Graphs shows the extent of the Coronavirus outbreak, with different Bars of the number of cases by Global and Districts in stat-covid19." />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/Javascript/main.js"></script>
+</head>
+<body class="body-style container">
+    <div class="rightbox-div one">
+        <div class="icon-div-in">
+            <div style="float: left; margin-top: 11px; margin-bottom: 10px; margin-right: 14px;">
+                <img src="/images/Covid19.png" style="height:70px; width:70px;" />
+            </div>
+            <div style="float: right;">
+                <div style="margin-top: 10px; font-size: xx-large; color: black; font-family: OpenSans-Regular; font-weight: bold;">
+                    <label>Covid-19</label>
+                </div>
+                <div style="background-color: black; border-radius: 20px; height: 27px">
+                    <div class="divHead1">
+                        <lable style="font-size: small; font-weight: bold; color:#45b7cd">Updated - </lable>
+                        <label style="font-size: small; font-weight: bold;">Hour : </label>
+                        <label id="updtDtHr" style="font-size: small; font-weight: bold; color: lightgreen"></label>
+                    </div>
+                    <div class="divHeadSprt">
+                        <label style="font-size: small; font-weight: bold;">|</label>
+                    </div>
+                    <div class="divHead2">
+                        <label style="font-size: small; font-weight: bold">Minute : </label>
+                        <label id="updtDtMin" style="font-size: small; font-weight: bold; color: lightgreen"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="leftbox-div two">
+        <div class="divHead">
+            <label class="lbl-css">India's Stats</label>
+        </div>
+        <div class="div-bar">
+            <div class="bar-glb-cnfrm tooltip">
+                <label class="tooltiptexttop">Confirmed in India</label>
+                <label class="lbl-bar">Confirmed : <label id="lblIndTr" style="color:#45b7cd"></label></label>
+                <span class="spn-bar1" style="box-shadow: 0 0 10px #45b7cd;">
+                    <span id="spnTtlIndCnf" class="spn-bar2" style="background: #45b7cd;"></span>
+                </span>
+            </div>
+            <div class="bar-glb-rcvr tooltip">
+                <label class="tooltiptexttop">Recovered in India</label>
+                <label class="lbl-bar">Recovered : <label id="lblIndRc" style="color:#048204"></label></label>
+                <span class="spn-bar1" style="box-shadow: 0 0 10px green;">
+                    <span id="spnindRcv" class="spn-bar2" style="background: #41cb41;"></span>
+                </span>
+            </div>
+            <div class="bar-glb-dth tooltip">
+                <label class="tooltiptexttop">Deaths in India</label>
+                <label class="lbl-bar">Deaths : <label id="lblIndDt" style="color:lightcoral"></label></label>
+                <span class="spn-bar1" style="box-shadow: 0 0 10px lightcoral;">
+                    <span id="spnIndDth" class="spn-bar2" style="background: lightcoral;"></span>
+                </span>
+            </div>
+        </div>
+        <div class="tbl-info">
+            <img src="images/info_icon.png" style="width:10px; height:10px;" />
+            <div><label>Click Record to View State Cases</label></div>
+        </div>
+        <div class="table-div">
+            <table id="tblIndiaData" class="tbl">
+                <thead>
+                    <tr style="color:white">
+                        <th class="col1 tooltip"><label class="tooltiptextbottom">Sort by Rank</label>Rank<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                        <th class="column2">State</th>
+                        <th class="col3 tooltip"><label class="tooltiptextbottom">Sort by Confirmed Case</label>Confirmed<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                        <th class="col4 tooltip"><label class="tooltiptextbottom">Sort by Death Case</label>Deaths<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                        <th class='column6 tooltip'><label class="tooltiptextbottom">Sort by Recovered Case</label>Recovered<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div class="rightbox-div six">
+        <div class="divHead tooltip">
+            <label class="tooltiptexttop">History Graph</label>
+            <label style="font-size:20px; font-weight:bold">Country : </label><label id="hCntryNm" style="font-size:20px; font-weight:bold">India</label>
+        </div>
+        <div style="background-color: #001015; border-radius: 20px; margin: 12px; margin-top: 12px; padding-top: 15px; padding-left: 10px;">
+            <div style="font-family: OpenSans-Regular; color: #45b7cd; margin-bottom: 8px;">
+                <label style="font-size:15px; font-weight:bolder">Confirmed Cases</label>
+            </div>
+            <div ng-controller="ConfirmedCase">
+                <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-colors="colors"
+                        chart-series="series" chart-click="onClick" chart-options="options" style="display: block; width: 317px; height: 170px;"></canvas>
+            </div>
+        </div>
+
+        <div style="background-color: #0f0000; border-radius: 20px; margin: 12px; margin-top: 12px; padding-top: 15px; padding-left: 10px;">
+            <div style="font-family: OpenSans-Regular; color: #ff0000; margin-bottom: 8px;">
+                <label style="font-size:15px; font-weight:bolder">Death Cases</label>
+            </div>
+            <div ng-controller="DeathCase">
+                <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-colors="colors"
+                        chart-series="series" chart-click="onClick" chart-options="options" style="display: block; width: 317px; height: 170px;"></canvas>
+            </div>
+        </div>
+
+        <div style="background-color: #000f05; border-radius: 20px; margin: 12px; margin-top: 12px; padding-top: 15px; padding-left: 10px;">
+            <div style="font-family: OpenSans-Regular; color: #33cc33; margin-bottom: 8px;">
+                <label style="font-size:15px; font-weight:bolder">Recovered Cases</label>
+            </div>
+            <div ng-controller="RecoveredCase">
+                <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-colors="colors"
+                        chart-series="series" chart-click="onClick" chart-options="options" style="display: block; width: 317px; height: 170px;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div id="divDstrct" class="leftbox-div three">
+        <div class="divHead">
+            <label class="lbl-css">State : </label><label id="lblStsNm" class="lbl-css"></label>
+        </div>
+        <div class="div-bar">
+            <div class="bar-glb-cnfrm tooltip">
+                <label class="tooltiptexttop">Confirmed in State</label>
+                <label class="lbl-bar">Confirmed : <label id="lblStsTr" style="color:#45b7cd"></label></label>
+                <span class="spn-bar1" style="box-shadow: 0 0 10px #45b7cd;">
+                    <span id="spnTtlStsCnf" class="spn-bar2" style="background: #45b7cd;"></span>
+                </span>
+            </div>
+            <div class="bar-glb-rcvr tooltip">
+                <label class="tooltiptexttop">Recovered in State</label>
+                <label class="lbl-bar">Recovered : <label id="lblStsRc" style="color:#048204"></label></label>
+                <span class="spn-bar1" style="box-shadow: 0 0 10px green;">
+                    <span id="spnStsRcv" class="spn-bar2" style="background: #41cb41;"></span>
+                </span>
+            </div>
+            <div class="bar-glb-dth tooltip">
+                <label class="tooltiptexttop">Deaths in State</label>
+                <label class="lbl-bar">Death : <label id="lblStsDt" style="color:lightcoral"></label></label>
+                <span class="spn-bar1" style="box-shadow: 0 0 10px lightcoral;">
+                    <span id="spnStsDth" class="spn-bar2" style="background: lightcoral;"></span>
+                </span>
+            </div>
+        </div>
+        <div class="tbl-info">
+            <img src="images/info_icon.png" style="width:10px; height:10px;" />
+            <div><label>Click Record to View District Details</label></div>
+        </div>
+        <div class="table-div">
+            <table id="tblIndiaDistrict" class="tbl">
+                <thead>
+                    <tr style="color:white">
+                        <th class="col1 tooltip"><label class="tooltiptextbottom">Sort by Sr</label>Sr No.<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                        <th class="column2">District</th>
+                        <th class="col3 tooltip"><label class="tooltiptextbottom">Sort by Confirmed Case</label>Confirmed<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                        <th class="col4 tooltip"><label class="tooltiptextbottom">Sort by Death Case</label>Deaths<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                        <th class='column6 tooltip'><label class="tooltiptextbottom">Sort by Recovered Case</label>Recovered<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div id="divDstBar" class="rightbox-div four">
+        <div class="divHead tooltip">
+            <label class="tooltiptexttop">District Details</label>
+            <label style="font-size:20px; font-weight:bolder">District : </label><label id="lblDstNm" style="font-size:20px; font-weight:bolder"></label>
+        </div>
+        <div class="measure">
+            <li>
+                <label style="font-size:14px; font-weight:bolder">Active Case : <label id="lblDstAc" style="color:#ff9933"></label></label>
+                <span class="bar" style="box-shadow: 0 0 10px black; background: white;"><span id="spnDstAc" style="background: black;"></span></span>
+            </li>
+            <li>
+                <label style="font-size:14px; font-weight:bolder">Total Confirmed : <label id="lblDstTc" style="color:#45b7cd"></label></label>
+                <span class="bar" style="box-shadow: 0 0 10px black; background: white;"><span id="spnDstCnfrm" style="background: black;"></span></span>
+            </li>
+            <li>
+                <label style="font-size:14px; font-weight:bolder">Total Deaths : <label id="lblDstTd" style="color:lightcoral"></label></label>
+                <span class="bar" style="box-shadow: 0 0 10px black; background: white;"><span id="spnDstDth" style="background: black;"></span></span>
+            </li>
+            <li>
+                <label style="font-size:14px; font-weight:bolder">Total Recovered : <label id="lblDstTr" style="color:#048204"></label></label>
+                <span class="bar" style="box-shadow: 0 0 10px black; background: white;"><span id="spnDstRcvr" style="background: black;"></span></span>
+            </li>
+        </div>
+    </div>
+
+    <div class="leftbox-div five">
+        <div class="divHead">
+            <label class="lbl-css">All Country</label>
+        </div>
+        <div class="div-bar">
+            <div class="bar-glb-cnfrm tooltip">
+                <label class="tooltiptexttop">Confirmed in World</label>
+                <label class="lbl-bar">Global Confirmed : <label id="lblTr1" style="color:#45b7cd"></label></label>
+                <span class="spn-bar1" style="box-shadow: 0 0 10px #45b7cd;">
+                    <span id="spnTtlGbCnf" class="spn-bar2" style="background: #45b7cd;"></span>
+                </span>
+            </div>
+            <div class="bar-glb-rcvr tooltip">
+                <label class="tooltiptexttop">Recovered in World</label>
+                <label class="lbl-bar">Global Recovered : <label id="lblRc1" style="color:#048204"></label></label>
+                <span class="spn-bar1" style="box-shadow: 0 0 10px green;">
+                    <span id="spnGbRcv" class="spn-bar2" style="background: #41cb41;"></span>
+                </span>
+            </div>
+            <div class="bar-glb-dth tooltip">
+                <label class="tooltiptexttop">Deaths in World</label>
+                <label class="lbl-bar">Global Death : <label id="lblDt1" style="color:lightcoral"></label></label>
+                <span class="spn-bar1" style="box-shadow: 0 0 10px lightcoral;">
+                    <span id="spnGbDth" class="spn-bar2" style="background: lightcoral;"></span>
+                </span>
+            </div>
+        </div>
+        <div class="tbl-info">
+            <img src="images/info_icon.png" style="width:10px; height:10px;" />
+            <div><label>Click Record to View History Graph</label></div>
+        </div>
+        <div class="table-div">
+            <table id="tblData" class="tbl">
+                <thead>
+                    <tr style="color:white">
+                        <th class="col1 tooltip"><label class="tooltiptextbottom">Sort by Rank</label>Rank<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                        <th class="column2">Country</th>
+                        <th class="col3 tooltip"><label class="tooltiptextbottom">Sort by Confirmed Case</label>Confirmed<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                        <th class="col4 tooltip"><label class="tooltiptextbottom">Sort by Death Case</label>Deaths<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                        <th class='column6 tooltip'><label class="tooltiptextbottom">Sort by Recovered Case</label>Recovered<img src="images/sort.png" width="10" height="10" style="margin-left: 3px;" /></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div class="rightbox-div seven">
+        <div class="divHead tooltip">
+            <label class="tooltiptexttop">World's States</label>
+            <label style="font-size:20px; font-weight:bolder">Global Status</label>
+        </div>
+        <div class="measure">
+            <li>
+                <label style="font-size:14px; font-weight:bolder">Total Confirmed : <label id="lblTc" style="color:#45b7cd"></label></label>
+                <span class="bar"><span id="spnTtlCnfrm"></span></span>
+            </li>
+            <li>
+                <label style="font-size:14px; font-weight:bolder">New Confirmed : <label id="lblNc" style="color:#45b7cd"></label></label>
+                <span class="bar"><span id="spnNwCnfrm"></span></span>
+            </li>
+            <li>
+                <label style="font-size:14px; font-weight:bolder">Total Deaths : <label id="lblTd" style="color:lightcoral"></label></label>
+                <span class="bar"><span id="spnTtlDth"></span></span>
+            </li>
+            <li>
+                <label style="font-size:14px; font-weight:bolder">New Deaths : <label id="lblNd" style="color:lightcoral"></label></label>
+                <span class="bar"><span id="spnNwDth"></span></span>
+            </li>
+            <li>
+                <label style="font-size:14px; font-weight:bolder">Total Recovered : <label id="lblTr" style="color:#048204"></label></label>
+                <span class="bar"><span id="spnTtlRcvr"></span></span>
+            </li>
+            <li>
+                <label style="font-size:14px; font-weight:bolder">New Recovered : <label id="lblNr" style="color:#048204"></label></label>
+                <span class="bar"><span id="spnNwRcvr"></span></span>
+            </li>
+        </div>
+    </div>
+
+    <div class="div-pic eight">
+        <div class="div-pic-smptm">
+            <img src="images/symptoms.png" style="width: 90%;" />
+        </div>
+        <div class="div-pic-hwitspr">
+            <div>
+                <div class="div-hwitsprd">
+                    <label>HOW IT SPREADS</label>
+                </div>
+                <img src="images/block-one.png" style="width: 97%;" />
+            </div>
+            <div>
+                <div class="div-prvnsn">
+                    <label>PREVENTION</label>
+                </div>
+                <img src="images/block-two.png" style="width: 100%;" />
+            </div>
+        </div>
+        <div class="div-sc-hub">
+            <label>Social Hub :</label>
+        </div>
+        <div class="div-pic-wtsap">
+            <img src="images/whatsappLogo.png" style="width:95px" />
+            <div style="margin-bottom: 8px;">
+                <a target="_blank" href="https://wa.me/919013353535?text=Hi" style="color: white" title="+91-9013353535WhatsApp (External Site that opens in a new window)"> +91-9013353535<br>WhatsApp<span class="ext"><span class="element-invisible"> </span></span></a>
+            </div>
+        </div>
+        <div class="div-pic-email">
+            <img src="images/emailLogo.png" style="width:120px; margin-bottom: 10px;" />
+            <div style="margin-bottom: 8px;">
+                <a href="mailto:ncov2019@gov.in" style="color: white" title="ncov2019[at]gov[dot]in (link sends e-mail)">ncov2019@gov.in<br>Email Address</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="divcls nine">
+        <div class="divHead">
+            <label class="lbl-css">Related Videos</label>
+        </div>
+        <div class="divclsinn">
+            <iframe class="iframcss" src="https://www.youtube.com/embed/oBSkHZPu2xU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="divclsinn">
+            <iframe class="iframcss" src="https://www.youtube.com/embed/0PBz1dSc3fU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="divclsinn">
+            <iframe class="iframcss" src="https://www.youtube.com/embed/v-852f1PXBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="div-dclmr ten">
+        <div style="margin-top: 8px; margin-left: 16px; font-size: 9px; font-weight: bold; color: gray;">
+            <img src="images/disclaimer.png" style="height: 10px; margin-right: 1px;" />
+            <label>DISCLAIMER :</label>
+        </div>
+        <div style="margin-left: 30px; font-size: 9px; color: lightgray;">
+            <p>
+                The information provided by stat-covid19 on <a href="https://stat-covid19.netlify.app" style="text-decoration: underline; color: lightblue; font-size: 9px;">https://stat-covid19.netlify.app</a> (the “Site”) is for general informational purposes only.
+            </p>
+            <p>
+                All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
+            </p> 
+        </div>
+    </div>
+</body>
+</html>

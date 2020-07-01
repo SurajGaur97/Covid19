@@ -1,0 +1,865 @@
+﻿.body-style {
+    width: 100%;
+}
+
+.column1 {
+    width: 10px; /*50px*/
+    padding-left: 0px;
+    color: black;
+}
+
+.column2 {
+    width: 100px; /*100px*/
+}
+
+.column3 {
+    width: 30px; /*80px*/
+}
+
+.column6 {
+    width: 30px; /*80px*/
+    text-align: center;
+}
+
+.lbl-bar {
+    font-size: small;
+    font-weight: bolder;
+    color: black;
+}
+
+.spn-bar1 {
+    background: #353b48;
+    display: block;
+    height: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-top: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.spn-bar2 {
+    height: 9px;
+    float: left;
+}
+
+.tbl {
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 15px auto;
+    position: relative;
+}
+
+    .tbl thead tr {
+        height: 35px;
+        background: black;
+        font-size: small;
+    }
+
+    .tbl tbody tr {
+        height: 35px;
+        font-size: small;
+    }
+
+.table-div {
+    border-radius: 20px;
+    margin: 25px;
+    margin-top: 1px;
+    font-weight: bolder;
+}
+
+.tbl-info {
+    float: left;
+    background-color: #fff7e0;
+    border-radius: 5px;
+    margin-left: 4.5%;
+    padding-left: 5px;
+    margin-bottom: 8px;
+}
+
+    .tbl-info div {
+        color: #ff6600;
+        font-size: 10px;
+        float: right;
+        margin-top: 4px;
+        margin-right: 6px;
+        margin-left: 4px;
+    }
+
+/*-------------------------Table Body td--------------------------*/
+.tbody-td-div {
+    float: left;
+    margin-right: 8px;
+}
+
+.tbody-td-div2 {
+    color: black;
+    margin-top: 8px;
+}
+
+.tbodyInd-td-div2 {
+    color: black;
+    text-align: center;
+}
+
+.tbody-td-img {
+    width: 30px;
+    border-radius: 12px;
+}
+/*-------------------------Table Body td End--------------------------*/
+
+/*.icon-div {
+    float: right;
+    margin-right: 13px;
+    width: 32%;
+    margin-top: 12px;
+    background-color: #005580;
+    border-radius: 20px;
+}*/
+
+.icon-div-in {
+    float: left;
+    margin-left: 12%;
+}
+
+.rightbox-div {
+    float: right;
+    margin-right: 13px;
+    margin-top: 12px;
+    background-color: #e6e6e6;
+    border-radius: 20px;
+    width: 32%; /*27%*/
+}
+
+.leftbox-div {
+    float: left;
+    margin-left: 13px;
+    margin-top: 12px;
+    background-color: #e6e6e6;
+    border-radius: 20px;
+    width: 65%; /*70%, 65%*/
+}
+
+.divHead {
+    margin-top: 15px;
+    margin-left: 25px;
+    color: black;
+    font-family: OpenSans-Regular;
+}
+
+.lbl-css {
+    font-size: 25px;
+    font-weight: bolder;
+    color: black;
+}
+
+.divHead1 {
+    float: left;
+    margin-top: 1px;
+    margin-left: 11px;
+    color: white;
+    font-family: OpenSans-Regular;
+}
+
+.divHeadSprt {
+    float: left;
+    margin-left: 4px;
+    color: white;
+    font-family: OpenSans-Regular;
+}
+
+.divHead2 {
+    float: right;
+    margin-top: 3px;
+    margin-left: 4px;
+    padding-right: 11px;
+    color: white;
+}
+
+
+/*--------------------------- Bar -----------------------*/
+.bar {
+    background: #353b48;
+    display: block;
+    height: 8px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #2187e7b3;
+    margin-top: 8px;
+    transition: linear 3s;
+}
+
+    .bar span {
+        height: 6px;
+        float: left;
+        background: #2187e7;
+    }
+
+.bar-glb-cnfrm {
+    float: left;
+    width: 31%;
+}
+
+.bar-glb-rcvr {
+    float: right;
+    width: 29%;
+}
+
+.bar-glb-dth {
+    float: right;
+    margin-right: 5%;
+    width: 30%;
+}
+
+.measure {
+    /*width: 83.6%;*/
+    margin: 0px 34px;
+    color: black;
+}
+
+    .measure li {
+        margin: 20px 0;
+    }
+
+.div-bar {
+    width: 90%;
+    margin-bottom: 9%;
+    margin-left: 4.5%;
+    margin-top: 2%;
+    color: white;
+}
+
+/*----------------------------------------------------From main.css-----------------------------------------------*/
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: sans-serif;
+}
+
+/* ------------------------------------ */
+a {
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+    a:focus {
+        outline: none !important;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+/* ------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+}
+
+p {
+    margin: 0px;
+}
+
+ul, li {
+    margin: 0px;
+    list-style-type: none;
+}
+
+
+/* ------------------------------------ */
+input {
+    display: block;
+    outline: none;
+    border: none !important;
+}
+
+textarea {
+    display: block;
+    outline: none;
+}
+
+    textarea:focus, input:focus {
+        border-color: transparent !important;
+    }
+
+/* ------------------------------------ */
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+    button:hover {
+        cursor: pointer;
+    }
+
+iframe {
+    border: none !important;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tbody tr {
+    font-family: opensans-regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+}
+
+    tbody tr:hover {
+        color: #555555;
+        background-color: #f5f5f5;
+        cursor: pointer;
+    }
+
+thead th.column6, th.col1, th.col3, th.col4:hover {
+    cursor: pointer;
+}
+
+
+/*--------------------------------------Pagination CSS--------------------------------------*/
+
+.dataTables_length {
+    display: none;
+}
+
+.dataTables_filter {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 2.3%;
+    font-size: 13px;
+}
+
+.form-control, .form-control-sm {
+    background-color: #333333;
+    border-radius: 4px;
+    color: white;
+    margin-top: 4px;
+    box-shadow: 0 0 0px black;
+    padding: 5px 7px;
+    font-size: 12px;
+}
+
+.paging_simple_numbers {
+    float: right;
+    margin-right: 18px;
+}
+
+.page-item, .active {
+    background-color: #272727;
+    border-radius: 4px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+    margin-left: 4px;
+    float: left;
+    margin-bottom: 14px;
+}
+
+.previous {
+    background-color: #272727;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    margin-left: 4px;
+    float: left;
+    margin-bottom: 14px;
+}
+
+.next {
+    background-color: #272727;
+    border-radius: 4px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-left: 4px;
+    float: left;
+    margin-bottom: 14px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: small;
+}
+
+.dataTables_info {
+    float: left;
+    color: dimgray;
+    font-size: 14px;
+    margin-left: 18px;
+}
+
+/*--------------------------------------End Pagination CSS--------------------------------------*/
+
+/*-------------------------Video Css-------------------------*/
+.divcls {
+    float: left;
+    margin-top: 12px;
+    margin-left: 13px;
+    border-radius: 12px;
+    background-color: #e6e6e6;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    width: 98%;
+}
+
+.div-dclmr {
+    float: left;
+    margin-top: 12px;
+    margin-left: 13px;
+    width: 93%;
+    margin-bottom: 10px;
+}
+
+.divclsinn {
+    float: left;
+    margin-top: 17px;
+    margin-left: 25px;
+    width: 31.4%;
+}
+
+.iframcss {
+    border-radius: 10px;
+    width: 100%;
+    height: 225px;
+}
+/*-------------------------End Video Css-------------------------*/
+
+/*-------------------------Pic Css-------------------------*/
+.div-pic {
+    float: left;
+    margin-top: 12px;
+    margin-left: 13px;
+    margin-right: 14px;
+    border-radius: 12px;
+    background-color: #e6e6e6;
+    padding-bottom: 16px;
+    padding-right: 25px;
+    width: 98%;
+}
+
+.div-pic-smptm {
+    background-color: black;
+    float: left;
+    margin-top: 17px;
+    margin-left: 25px;
+    border-radius: 12px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 37.4%;
+}
+
+.div-pic-hwitspr {
+    background-color: black;
+    float: left;
+    margin-top: 17px;
+    margin-left: 25px;
+    border-radius: 12px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 37%;
+}
+
+.div-hwitsprd {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: darkorange;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.div-prvnsn {
+    color: #66cc00;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 24px;
+}
+
+.div-pic-wtsap {
+    background-color: lightgrey;
+    float: left;
+    margin-top: 17px;
+    margin-left: 25px;
+    border-radius: 12px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: #73e600;
+    text-align: center;
+    font-weight: bold;
+    width: 19.8%;
+}
+
+.div-pic-email {
+    background-color: lightgrey;
+    float: left;
+    margin-top: 20px;
+    margin-left: 25px;
+    border-radius: 12px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: cornflowerblue;
+    text-align: center;
+    font-weight: bold;
+    width: 19.8%;
+}
+
+.div-sc-hub {
+    background-color: lightgrey;
+    float: left;
+    margin-top: 17px;
+    margin-left: 25px;
+    border-radius: 12px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 13px;
+    margin-bottom: -4px;
+    margin-left: 17px;
+}
+/*-------------------------End Pic Css-------------------------*/
+
+/*---------------------------------ToolTip Tool---------------------------*/
+.tooltip {
+    position: relative;
+}
+
+    .tooltip .tooltiptextbottom {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 0;
+        font-size: 12px;
+        font-weight: bold;
+        opacity: .8;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip .tooltiptexttop {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 0;
+        font-size: 12px;
+        font-weight: bold;
+        opacity: .8;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip:hover .tooltiptextbottom {
+        visibility: visible;
+    }
+
+    .tooltip:hover .tooltiptexttop {
+        visibility: visible;
+    }
+/*------------------------------End ToolTip Tool---------------------------*/
+
+/*-----------------------------------For Mob View--------------------------------*/
+@media screen and (max-width: 1012px) {
+    .body-style {
+        height: auto;
+    }
+
+    /*.icon-div {
+        width: 98.1%;
+        margin-right: 1%;
+        margin-left: 1%;
+        margin-top: 2%;
+        border-radius: 10px;
+    }*/
+
+    .leftbox-div {
+        width: 98%;
+        margin-left: 1%;
+        margin-top: 2%;
+        border-radius: 10px;
+    }
+
+    .rightbox-div {
+        width: 98.1%;
+        margin-right: 1%;
+        margin-left: 1%;
+        margin-top: 2%;
+        border-radius: 10px;
+    }
+
+    .measure {
+        margin: 0px 28px;
+    }
+
+    .icon-div-in {
+        float: left;
+        margin-left: 6%;
+    }
+
+    .bar-glb-cnfrm {
+        float: none;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .bar-glb-rcvr {
+        float: none;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .bar-glb-dth {
+        float: none;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        width: 100%;
+    }
+
+    .table-div {
+        margin: 2%;
+    }
+
+    th.col1 {
+        padding-left: 5px;
+    }
+
+    .tbody-td-img {
+    }
+
+    .divHead {
+        margin-left: 4.5%;
+    }
+
+    .div-bar {
+        width: 85%;
+        margin-bottom: 6%;
+        margin-left: 7.5%;
+    }
+
+    .lbl-css {
+        font-size: 20px;
+    }
+
+    .tbl-info {
+        border-radius: 8px;
+        margin-left: 10px;
+    }
+
+    .div-hwitsprd {
+        font-size: 11px;
+    }
+
+    .div-prvnsn {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+
+    .div-pic-wtsap {
+        width: 45%;
+        padding-left: 0px;
+    }
+
+    .div-pic-email {
+        width: 45%;
+        padding-left: 0px;
+        margin-left: 7px;
+        margin-top: 17px;
+    }
+
+    .div-sc-hub {
+        margin-bottom: -10px;
+        width: 100%;
+    }
+
+    .div-pic-smptm {
+        width: 93%;
+    }
+
+    .div-pic-hwitspr {
+        width: 93%;
+    }
+    /*-------------------------Table Body td--------------------------*/
+    .tbody-td-div {
+        float: none;
+        margin-right: 0px;
+        text-align: center;
+        margin-top: 4px;
+    }
+
+    .tbody-td-img {
+        display: inline-block;
+    }
+
+    .tbody-td-div2 {
+        text-align: center;
+        margin-bottom: 4px;
+        margin-top: 0px;
+    }
+
+    .div-pic {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    /*-------------------------Table Body td End--------------------------*/
+
+    /*-------------------------Pagination--------------------------*/
+    .dataTables_info {
+        float: unset;
+        display: inline-block;
+        margin-bottom: 5px;
+        margin-left: 0px;
+    }
+
+    .col-md-7 {
+        text-align: center;
+    }
+
+    .col-md-5 {
+        text-align: center;
+    }
+
+    .paging_simple_numbers {
+        float: unset;
+        display: inline-block;
+        margin-right: 7px;
+    }
+
+    .dataTables_filter {
+        float: left;
+        margin-left: 1%;
+        width: 100%;
+    }
+    /*-------------------------Pagination End--------------------------*/
+
+    /*-----------------------------Video Links-------------------------*/
+    .divcls {
+        margin-left: 1%;
+    }
+
+    .div-dclmr {
+        margin-left: 1%;
+    }
+
+    .divclsinn {
+        float: left;
+        margin-top: 17px;
+        margin-left: 25px;
+        width: auto;
+    }
+
+    .iframcss {
+        width: auto;
+        height: auto;
+    }
+    /*-----------------------------End Video Links-------------------------*/
+
+    /*------------------------------Ordering Div---------------------------*/
+    .container {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .one {
+        order: 1;
+    }
+
+    .two {
+        order: 2;
+    }
+
+    .three {
+        order: 3;
+    }
+
+    .four {
+        order: 4;
+    }
+
+    .five {
+        order: 5;
+    }
+
+    .six {
+        order: 6;
+    }
+
+    .seven {
+        order: 7;
+    }
+
+    .eight {
+        order: 8;
+    }
+
+    .nine {
+        order: 9;
+    }
+
+    .ten {
+        order: 10;
+    }
+    /*------------------------------End Ordering Div---------------------------*/
+
+    /*------------------------------Tooltip Div---------------------------*/
+    .tooltip:hover .tooltiptextbottom {
+        visibility: hidden;
+    }
+
+    .tooltip:hover .tooltiptexttop {
+        visibility: hidden;
+    }
+    /*------------------------------End Tooltip Div---------------------------*/
+}
+/*-----------------------------------End Mob View--------------------------------*/
+
+
+
